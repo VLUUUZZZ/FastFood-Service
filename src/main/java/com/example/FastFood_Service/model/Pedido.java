@@ -16,18 +16,41 @@ public class Pedido {
         this.estado = estado;
     }
 
-    public int getId() { return id; }
-    public void setId(int id) { this.id = id; }
+    public Pedido() {}
 
-    public String getNombreCliente() { return nombreCliente; }
-    public void setNombreCliente(String nombreCliente) { this.nombreCliente = nombreCliente; }
+    public int getId() {
+        return id;
+    }
 
-    public String getDescripcion() { return descripcion; }
-    public void setDescripcion(String descripcion) { this.descripcion = descripcion; }
+    public String getNombreCliente() {
+        return nombreCliente;
+    }
 
-    public double getMonto() { return monto; }
-    public void setMonto(double monto) { this.monto = monto; }
+    public String getDescripcion() {
+        return descripcion;
+    }
 
-    public String getEstado() { return estado; }
-    public void setEstado(String estado) { this.estado = estado; }
+    public double getMonto() {
+        return monto;
+    }
+
+    public String getEstado() {
+        return estado;
+    }
+
+    public void setNombreCliente(String nombreCliente) {
+        this.nombreCliente = nombreCliente;
+    }
+
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
+
+    public void setMonto(double monto) {
+        this.monto = monto;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
+    }
 }
