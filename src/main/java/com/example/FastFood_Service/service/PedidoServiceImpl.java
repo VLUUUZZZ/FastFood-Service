@@ -17,4 +17,41 @@ public class PedidoServiceImpl implements PedidoService {
     public List<Pedido> listarPedidos() {
         return pedidos;
     }
+
+    @Override
+    public Pedido crearPedido(PedidoRequest request) {
+        Pedido pedido = new Pedido(
+                nextId++,
+                request.getNombreCliente(),
+                request.getDescripcion(),
+                request.getMonto(),
+                "PENDIENTE"
+        );
+        pedidos.add(pedido);
+        return pedido;
+    }
+
+    @Override
+    public Pedido obtenerPedidoPorId(int id) {
+        return pedidos.stream()
+                .filter(p -> p.getId() == id)
+                .findFirst()
+                .orElse(null);
+    }
+
+    @Override
+    public Pedido actualizarPedido(int id, PedidoRequest request) {
+        Pedido pedido = obtenerPedidoPorId(id);
+        if (pedido != null) {
+            pedido.setNombreCliente(request.getNombreCliente());
+            pedido.setDescripcion(request.getDescripcion());
+            pedido.setMonto(request.getMonto());
+        }
+        return pedido;
+    }
+
+    @Override
+    public boolean eliminarPedido(int id) {
+        return pedidos.removeIf(p -> p.getId() == id);
+    }
 }
