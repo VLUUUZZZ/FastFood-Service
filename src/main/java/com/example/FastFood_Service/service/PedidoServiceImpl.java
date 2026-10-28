@@ -60,16 +60,6 @@ public class PedidoServiceImpl implements PedidoService {
     }
 
     @Override
-    public Pedido actualizarPedido(int id, PedidoRequest request) {
-        return null;
-    }
-
-    @Override
-    public boolean eliminarPedido(int id) {
-        return false;
-    }
-
-    @Override
     public boolean cancelarPedido(int id) {
 
         Pedido pedido = listaPedidos.findById(id);

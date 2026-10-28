@@ -9,11 +9,6 @@ public interface PedidoService {
     List<Pedido> listarPedidos();
     Pedido crearPedido(PedidoRequest request);
     Pedido obtenerPedidoPorId(int id);
-
-    Pedido actualizarPedido(int id, PedidoRequest request);
-
-    boolean eliminarPedido(int id);
-
     boolean cancelarPedido(int id);
     Pedido despacharPedido();
     double calcularTotalRecursivo();
